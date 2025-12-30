@@ -80,25 +80,107 @@ That's it. Commands auto-load in Claude Code.
 
 ## Core Workflow
 
-**End of session:**
-```bash
-/handoff
-```
-Claude captures learnings, technical insights, and decisions. Appends to `.inbox.md`.
+### `/handoff` - End of session
+```markdown
+Synthesize this session into a handoff entry for `~/double/.inbox.md`.
 
-**Process the inbox:**
-```bash
-/sync
-```
-Routes entries to categorised files, archives processed items, commits to git.
+**Critical:** Only capture **reusable insights**, not one-off decisions.
 
-**Load context:**
-```bash
-/engineering  # Load technical knowledge
-/tasks        # Load task management
-/business     # Load business context
-/memory       # Load everything
+## What to Capture
+
+### Always Include:
+- **Learnings:** Patterns, principles, or insights that apply beyond this specific task
+  - Writing: Style insights, what worked/didn't work
+  - Code: Architecture decisions, why X over Y
+  - Research: Key findings, mental models
+- **Technical Content:** New knowledge that should go in engineering files
+- **Decisions with Rationale:** Only if the "why" is reusable
+
+### Never Include UNLESS RELATED TO CODING:
+- Specific edits ("moved section X to Y")
+- Task completion status ("finished blog post")
+- One-off decisions without broader insight
+- Obvious next steps
+
+## Format
+
+[YYYY-MM-DD HH:MM] Session: [Brief description]
+
+Learnings:
+- [Reusable insight with context]
+- [Pattern or principle discovered]
+
+Technical Content:
+- [New knowledge for engineering files]
+
+Decisions:
+- [Decision + why it matters beyond this task]
+
+Next:
+- [Only non-obvious next steps]
+
+Append the handoff to `~/double/.inbox.md`. Document WHAT WAS LEARNED, not just what files changed.
 ```
+
+### `/sync` - Process the inbox
+```markdown
+Process all entries in ~/double/.inbox.md and route to appropriate files.
+
+Steps:
+1. Read ~/double/.inbox.md in full
+2. For each entry, determine target domain:
+   - Technical decisions/learnings → ~/double/engineering/[relevant].md
+   - Tasks/TODOs → ~/double/tasks/active.md or ~/double/tasks/backlog.md
+   - Project updates → ~/double/projects/[relevant].md
+   - Business insights → ~/double/business/[relevant].md
+   - People/team info → ~/double/research/people.md
+   - Company intel → ~/double/research/companies.md
+
+3. Update target files:
+   - Add new sections if needed
+   - Preserve existing structure
+   - Update "Last updated" timestamps
+   - Cross-reference related files using [[links]]
+
+4. Archive processed entries:
+   - Move entries to ~/double/meta/processed/[today's date].md
+   - Clear ~/double/.inbox.md
+
+5. Git operations:
+   git add .
+   git commit -m "Daily sync: [date] - [2-3 word summary]"
+   git push
+
+Show summary:
+- Files updated: [list]
+- Tasks added: [count]
+- Decisions captured: [count]
+```
+
+### `/engineering` - Load context
+```markdown
+You are now working on engineering/coding tasks. Load and reference the following context:
+
+**General Engineering:** `~/double/engineering/everything.md`
+**Python:** `~/double/engineering/python.md`
+**TypeScript:** `~/double/engineering/typescript.md`
+**Databases:** `~/double/engineering/databases.md`
+**AI/ML:** `~/double/engineering/ai.md`
+**Evals:** `~/double/engineering/evals.md`
+**Research:** `~/double/engineering/research.md`
+**Deployment:** `~/double/engineering/deployment.md`
+**Analytics:** `~/double/engineering/analytics.md`
+
+When writing code:
+- Follow established patterns and preferences
+- Avoid documented antipatterns
+- Suggest updates when you discover new patterns
+- Reference relevant best practices from these files
+
+Read the contents of these files now to understand coding preferences and patterns.
+```
+
+Similar commands exist for `/tasks`, `/business`, `/research`, and `/memory` (loads everything).
 
 ## Additional Commands
 
