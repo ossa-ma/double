@@ -1,6 +1,6 @@
-# Double: External Memory for AI Assistants
+# Double: External Personal Memory for AI
 
-Persistent context for Claude Code, Cursor, and other AI tools. No database, no MCP server, no embeddings. Just markdown files and git.
+Persistent context for Claude Code, Cursor, and other AI tools. Skips the database, MCP servers, embeddings for simple markdown files and good ol' git.
 
 > **WARNING:** This is a PUBLIC template. Once you clone it and add your notes, DO NOT push your personal version to a public repo. Your memory will contain secrets, API keys, personal information, and your working style. Keep your fork private or use it locally only.
 
