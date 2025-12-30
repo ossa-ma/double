@@ -2,6 +2,8 @@
 
 Persistent context for Claude Code, Cursor, and other AI tools. No database, no MCP server, no embeddings. Just markdown files and git.
 
+> **WARNING:** This is a PUBLIC template. Once you clone it and add your notes, DO NOT push your personal version to a public repo. Your memory will contain secrets, API keys, personal information, and your working style. Keep your fork private or use it locally only.
+
 ## What is Double?
 
 AI assistants forget everything between sessions. Your setup decisions, coding patterns, project context - gone every time.
@@ -31,6 +33,9 @@ Double solves this with organized markdown files that you control. Think of it a
 ```bash
 git clone https://github.com/ossa-ma/double ~/double
 cd ~/double
+
+# IMPORTANT: If you plan to use git, keep it local or make your repo PRIVATE
+# Your memory will contain personal info, API keys, and private notes
 ```
 
 **2. Use the commands:**
