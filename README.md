@@ -96,9 +96,9 @@ done
 ```
 
 Benefits:
-- ✅ Auto-sync for double commands
-- ✅ Can add other commands to `~/.claude/commands/` that stay separate
-- ⚠️ Need to re-run when adding new commands to double
+- Auto-sync for double commands
+- Can add other commands to `~/.claude/commands/` that stay separate
+- Note: Need to re-run when adding new commands to double
 
 See [Claude Code Slash Commands docs](https://code.claude.com/docs/en/slash-commands) for more details on how command discovery works.
 
