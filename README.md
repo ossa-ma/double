@@ -14,6 +14,13 @@ Double solves this with organised markdown files that you control. Think of it a
 
 **Why "Double"?** Named after Dostoevsky's novel "The Double" - it's your second self. Not just engineering and research, but business ideas, personal notes, hobbies, workflow preferences.
 
+## Key Features
+
+- **Smart routing:** `/sync` only loads files relevant to your work - Python session won't load iOS context
+- **Concise capture:** `/handoff` writes terse, reusable insights (not verbose essays)
+- **Context efficient:** Compressed memory files reduce token overhead by ~65% while keeping essential knowledge
+- **No dependencies:** Just markdown files and git
+
 ## Make It Yours
 
 **This is a template, not a rigid system.** The folder structure, commands, and workflows here are a starting point based on one person's working style. You should heavily customise it:
@@ -112,81 +119,39 @@ That's it. Commands are now available in Claude Code from any directory.
 ## Core Workflow
 
 ### `/handoff` - End of session
-```markdown
-Synthesize this session into a handoff entry for `~/double/.inbox.md`.
+Captures concise, reusable insights from your session to `~/double/.inbox.md`.
 
-**Critical:** Only capture **reusable insights**, not one-off decisions.
+**What to capture:**
+- Architecture decisions (why X over Y)
+- Patterns/principles that apply broadly
+- Technical knowledge for engineering files
+- Non-obvious blockers or next steps
 
-## What to Capture
-
-### Always Include:
-- **Learnings:** Patterns, principles, or insights that apply beyond this specific task
-  - Writing: Style insights, what worked/didn't work
-  - Code: Architecture decisions, why X over Y
-  - Research: Key findings, mental models
-- **Technical Content:** New knowledge that should go in engineering files
-- **Decisions with Rationale:** Only if the "why" is reusable
-
-### Never Include UNLESS RELATED TO CODING:
-- Specific edits ("moved section X to Y")
-- Task completion status ("finished blog post")
-- One-off decisions without broader insight
+**Don't capture:**
+- Specific edits or task status
+- One-off decisions without broader lesson
 - Obvious next steps
 
-## Format
-
-[YYYY-MM-DD HH:MM] Session: [Brief description]
-
-Learnings:
-- [Reusable insight with context]
-- [Pattern or principle discovered]
-
-Technical Content:
-- [New knowledge for engineering files]
-
-Decisions:
-- [Decision + why it matters beyond this task]
-
-Next:
-- [Only non-obvious next steps]
-
-Append the handoff to `~/double/.inbox.md`. Document WHAT WAS LEARNED, not just what files changed.
-```
+**Format:** Short, direct, informal. One line per insight. No fluff.
 
 ### `/sync` - Process the inbox
-```markdown
-Process all entries in ~/double/.inbox.md and route to appropriate files.
+Routes entries from `~/double/.inbox.md` to appropriate files with **smart routing** - only loads files relevant to inbox content.
 
-Steps:
-1. Read ~/double/.inbox.md in full
-2. For each entry, determine target domain:
-   - Technical decisions/learnings → ~/double/engineering/[relevant].md
-   - Tasks/TODOs → ~/double/tasks/active.md or ~/double/tasks/backlog.md
-   - Project updates → ~/double/projects/[relevant].md
-   - Business insights → ~/double/business/[relevant].md
-   - People/team info → ~/double/research/people.md
-   - Company intel → ~/double/research/companies.md
+**Routing logic:**
+- iOS/Swift → `engineering/ios-swift.md`
+- Python/FastAPI → `engineering/python.md`
+- Git/Docker/logging → `engineering/everything.md`
+- Project-specific → `projects/[name].md`
+- Business/ideas → `business/ideas.md`
+- Tasks → `tasks/active.md`
 
-3. Update target files:
-   - Add new sections if needed
-   - Preserve existing structure
-   - Update "Last updated" timestamps
-   - Cross-reference related files using [[links]]
+**Process:**
+1. Analyze inbox to determine which domains are needed
+2. Load only relevant target files (not all memory)
+3. Update files, archive processed entries
+4. Commit changes
 
-4. Archive processed entries:
-   - Move entries to ~/double/meta/processed/[today's date].md
-   - Clear ~/double/.inbox.md
-
-5. Git operations:
-   git add .
-   git commit -m "Daily sync: [date] - [2-3 word summary]"
-   git push
-
-Show summary:
-- Files updated: [list]
-- Tasks added: [count]
-- Decisions captured: [count]
-```
+This reduces context overhead significantly - a Python-only session won't load iOS files.
 
 ### `/engineering` - Load context
 ```markdown

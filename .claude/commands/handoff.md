@@ -3,59 +3,33 @@ End-of-session handoff - capture what matters from our conversation.
 description: End-of-session summary
 ---
 
-Synthesize this session into a handoff entry for `~/memory/.inbox.md`.
+Append a concise handoff entry to `~/memory/.inbox.md`.
 
-**Critical:** Only capture **reusable insights**, not one-off decisions.
-
-## What to Capture
-
-### Always Include:
-- **Learnings:** Patterns, principles, or insights that apply beyond this specific task
-  - Writing: Style insights, what worked/didn't work
-  - Code: Architecture decisions, why X over Y
-  - Research: Key findings, mental models
-- **Technical Content:** New knowledge that should go in engineering files
-- **Decisions with Rationale:** Only if the "why" is reusable
-
-### Never Include UNLESS RELATED TO CODING:
-- Specific edits ("moved section X to Y")
-- Task completion status ("finished blog post")
-- One-off decisions without broader insight
-- Obvious next steps
-
-## Format
-
-```markdown
-[YYYY-MM-DD HH:MM] Session: [Brief description]
+**Format:**
+```
+[YYYY-MM-DD HH:MM] Session: [One-line description]
 
 Learnings:
-- [Reusable insight with context]
-- [Pattern or principle discovered]
+- [Reusable insight, 1-2 lines max]
+- [Pattern/principle, no examples unless essential]
 
 Technical Content:
-- [New knowledge for engineering files]
+- [New knowledge for engineering files, terse]
 
 Decisions:
-- [Decision + why it matters beyond this task]
-
-Next:
-- [Only non-obvious next steps]
+- [Decision + why, only if reusable beyond this task]
 ```
 
-## Examples
+**Capture reusable insights only:**
+- Architecture decisions (why X over Y)
+- Patterns/principles that apply broadly
+- Technical knowledge for engineering files
+- Non-obvious blockers or next steps
 
-**Bad (too specific):**
-```
-Decisions:
-- Move LPU section higher for early context
-- Shorten conclusion from 17 to 6 lines
-```
+**Don't capture:**
+- Specific edits ("moved X to Y")
+- Task status ("finished feature X")
+- One-off decisions without broader lesson
+- Obvious next steps
 
-**Good (reusable insight):**
-```
-Learnings:
-- Don't rehash in conclusions - tie forward, don't summarize backward
-- Avoid jargon even in technical posts - "regulatory arbitrage" sounds corporate, not human
-```
-
-Append the handoff to `~/memory/.inbox.md`. Document WHAT WAS LEARNED, not just what files changed.
+**Style:** Short, direct, informal. One line per insight. No fluff. Examples only when essential.
