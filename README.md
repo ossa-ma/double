@@ -137,21 +137,11 @@ Captures concise, reusable insights from your session to `~/double/.inbox.md`.
 ### `/sync` - Process the inbox
 Routes entries from `~/double/.inbox.md` to appropriate files with **smart routing** - only loads files relevant to inbox content.
 
-**Routing logic:**
-- iOS/Swift → `engineering/ios-swift.md`
-- Python/FastAPI → `engineering/python.md`
-- Git/Docker/logging → `engineering/everything.md`
-- Project-specific → `projects/[name].md`
-- Business/ideas → `business/ideas.md`
-- Tasks → `tasks/active.md`
+Lists all available files (engineering, projects, business, research, tasks) so you know what exists, then uses judgment to determine which files actually need updating based on content meaning. Some insights span multiple files (e.g., logging patterns apply to both Python and iOS).
 
-**Process:**
-1. Analyze inbox to determine which domains are needed
-2. Load only relevant target files (not all memory)
-3. Update files, archive processed entries
-4. Commit changes
+**Goal:** Efficiency (load less) without rigidity (use actual judgment about relevance).
 
-This reduces context overhead significantly - a Python-only session won't load iOS files.
+Example: Python-only session won't load iOS files. Cross-domain architecture insights might update multiple engineering files.
 
 ### `/engineering` - Load context
 ```markdown

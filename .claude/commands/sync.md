@@ -1,47 +1,53 @@
 Process all entries in ~/memory/.inbox.md and route to appropriate files.
 
-**Smart Routing:** Only load files relevant to inbox content. Analyze entries first, load target files only.
+**Smart Routing:** Load only files relevant to inbox content. Use judgment based on content meaning, not rigid keyword matching.
 
-## Routing Map
-
-Scan inbox entries for keywords/context to determine targets:
+## Available Files
 
 **Engineering:**
-- iOS/Swift/SwiftUI → `engineering/ios-swift.md`
-- Python/FastAPI/async/Pydantic → `engineering/python.md`
-- Git/Docker/logging/debugging → `engineering/everything.md`
-- Deployment/infra → `engineering/deployment.md`
+- `engineering/python.md` - Python, FastAPI, async, Pydantic
+- `engineering/ios-swift.md` - iOS, Swift, SwiftUI
+- `engineering/typescript.md` - TypeScript, Node.js, frontend
+- `engineering/everything.md` - General patterns, git, debugging, architecture
+- `engineering/deployment.md` - Docker, CI/CD, infrastructure
+- `engineering/databases.md` - SQL, NoSQL, schemas
+- `engineering/ai.md` - LLMs, prompting, AI engineering
+- `engineering/evals.md` - Evaluation frameworks, testing AI
+- `engineering/analytics.md` - Data tracking, metrics
+- `engineering/research.md` - Research engineering patterns
+- `engineering/ecommerce.md` - E-commerce specific patterns
 
 **Projects:**
-- rlog/reading log → `projects/rlog.md`
-- Other project names → `projects/[name].md`
+- `projects/rlog.md`
+- `projects/gradientascent.md`
+- `projects/stack-intel.md`
 
 **Business:**
-- Ideas/pricing/monetization → `business/ideas.md`
-- Marketing/growth → `business/marketing.md`
+- `business/ideas.md` - Product ideas, pricing, monetization
+- `business/marketing.md` - Growth, marketing strategies
+- `business/product.md` - Product decisions
+- `business/reselling.md` - Reselling business context
 
 **Research:**
-- Company info → `research/companies.md`
-- People/contacts → `research/people.md`
+- `research/companies.md` - Company intel
+- `research/people.md` - People, contacts
 
 **Tasks:**
-- Action items → `tasks/active.md`
-- Future work → `tasks/backlog.md`
+- `tasks/active.md` - Current work
+- `tasks/backlog.md` - Future work
+- `tasks/blocked.md` - Blocked items
 
 ## Process
 
-1. **Read inbox** (`~/memory/.inbox.md`)
-2. **Analyze & route** - scan all entries, determine which files are needed
-3. **Load target files only** - don't load unrelated domains
-4. **Update files:**
-   - Add content to appropriate sections
-   - Update timestamps
-   - Cross-reference with [[links]]
-5. **Archive:** Move processed to `meta/processed/[date].md`, clear inbox
-6. **Commit:** `git commit -m "Sync: [brief summary]"`
+1. **Read inbox** (`~/memory/.inbox.md`) - understand what's captured
+2. **Determine relevance** - which files need updating?
+   - Use judgment, not keyword matching
+   - Some insights span multiple files (e.g., logging applies to both Python and iOS)
+   - Cross-domain patterns might go in `everything.md`
+   - Project work goes in specific project files
+3. **Load only relevant files** - don't load everything, but don't be rigid
+4. **Update files** - add content to appropriate sections, update timestamps, cross-reference with [[links]]
+5. **Archive** - move processed to `meta/processed/[date].md`, clear inbox
+6. **Commit** - `git commit -m "Sync: [brief summary]"`
 
-## Output
-
-Show:
-- Files updated (list)
-- New insights added (count per domain)
+**Goal:** Efficiency (load less) without rigidity (use actual judgment about relevance).
