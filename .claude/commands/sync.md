@@ -4,29 +4,21 @@ Process all entries in ~/memory/.inbox.md and route to appropriate files.
 
 ## Available Files
 
-**Engineering:**
-- `engineering/python.md` - Python, FastAPI, async, Pydantic
-- `engineering/ios-swift.md` - iOS, Swift, SwiftUI
-- `engineering/typescript.md` - TypeScript, Node.js, frontend
+**Engineering:** (customize based on your tech stack)
 - `engineering/everything.md` - General patterns, git, debugging, architecture
-- `engineering/deployment.md` - Docker, CI/CD, infrastructure
+- `engineering/python.md` - Python patterns and best practices
+- `engineering/typescript.md` - TypeScript, Node.js, frontend
 - `engineering/databases.md` - SQL, NoSQL, schemas
+- `engineering/deployment.md` - Docker, CI/CD, infrastructure
 - `engineering/ai.md` - LLMs, prompting, AI engineering
-- `engineering/evals.md` - Evaluation frameworks, testing AI
-- `engineering/analytics.md` - Data tracking, metrics
-- `engineering/research.md` - Research engineering patterns
-- `engineering/ecommerce.md` - E-commerce specific patterns
 
-**Projects:**
-- `projects/rlog.md`
-- `projects/gradientascent.md`
-- `projects/stack-intel.md`
+**Projects:** (customize based on your active projects)
+- `projects/project-name.md`
 
-**Business:**
+**Business:** (customize based on your business areas)
 - `business/ideas.md` - Product ideas, pricing, monetization
 - `business/marketing.md` - Growth, marketing strategies
 - `business/product.md` - Product decisions
-- `business/reselling.md` - Reselling business context
 
 **Research:**
 - `research/companies.md` - Company intel

@@ -147,15 +147,13 @@ Example: Python-only session won't load iOS files. Cross-domain architecture ins
 ```markdown
 You are now working on engineering/coding tasks. Load and reference the following context:
 
+(Customize this list based on your tech stack and engineering files)
+
 **General Engineering:** `~/double/engineering/everything.md`
 **Python:** `~/double/engineering/python.md`
 **TypeScript:** `~/double/engineering/typescript.md`
 **Databases:** `~/double/engineering/databases.md`
-**AI/ML:** `~/double/engineering/ai.md`
-**Evals:** `~/double/engineering/evals.md`
-**Research:** `~/double/engineering/research.md`
 **Deployment:** `~/double/engineering/deployment.md`
-**Analytics:** `~/double/engineering/analytics.md`
 
 When writing code:
 - Follow established patterns and preferences

@@ -24,10 +24,11 @@ Create `.cursorrules` in your project root:
 When working on this project, reference these memory files:
 
 ## Engineering Best Practices
+(Customize based on your tech stack)
+- General: ~/memory/engineering/everything.md
 - Python: ~/memory/engineering/python.md
 - TypeScript: ~/memory/engineering/typescript.md
 - Databases: ~/memory/engineering/databases.md
-- AI/ML: ~/memory/engineering/ai.md
 
 ## Project Context
 - Projects: ~/memory/projects/*.md

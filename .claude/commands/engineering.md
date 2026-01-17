@@ -4,15 +4,13 @@ description: Load engineering best practices and patterns
 
 You are now working on engineering/coding tasks. Load and reference the following context:
 
+(Customize this list based on your tech stack and engineering files)
+
 **General Engineering:** `~/memory/engineering/everything.md`
 **Python:** `~/memory/engineering/python.md`
 **TypeScript:** `~/memory/engineering/typescript.md`
 **Databases:** `~/memory/engineering/databases.md`
-**AI/ML:** `~/memory/engineering/ai.md`
-**Evals:** `~/memory/engineering/evals.md`
-**Research:** `~/memory/engineering/research.md`
 **Deployment:** `~/memory/engineering/deployment.md`
-**Analytics:** `~/memory/engineering/analytics.md`
 
 When writing code:
 - Follow established patterns and preferences
