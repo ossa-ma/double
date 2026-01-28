@@ -39,7 +39,7 @@ Process all entries in ~/memory/.inbox.md and route to appropriate files.
    - Project work goes in specific project files
 3. **Load only relevant files** - don't load everything, but don't be rigid
 4. **Update files** - add content to appropriate sections, update timestamps, cross-reference with [[links]]
-5. **Archive** - move processed to `meta/processed/[date].md`, clear inbox
+5. **Clear inbox** - empty `.inbox.md` after routing
 6. **Commit** - `git commit -m "Sync: [brief summary]"`
 
 **Goal:** Efficiency (load less) without rigidity (use actual judgment about relevance).

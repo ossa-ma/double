@@ -7,8 +7,8 @@ For each project extract:
 - Status (Active/Blocked/Paused/Completed)
 - Last updated date (from git or file timestamp)
 - Open tasks (search ~/memory/tasks/active.md for references to this project)
-- Recent activity (check ~/memory/meta/processed/ for mentions)
-- Blockers (from ~/memory/tasks/waiting.md)
+- Recent activity (from git log or project file content)
+- Blockers (from ~/memory/tasks/blocked.md)
 
 Display as formatted table:
 
