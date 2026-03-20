@@ -50,7 +50,8 @@ Everything else? Change it.
 ├── personal/        # Writing style, preferences, workflows
 ├── meta/            # System rules, processed entries, changelog
 └── .claude/
-    └── commands/    # Skills that load context
+    ├── commands/    # Workflow commands that load context
+    └── skills/      # Forked skills (tangent, etc.)
 ```
 
 ## Why `~/double/` in Your Home Directory?
@@ -100,14 +101,26 @@ If you want double commands to auto-update and still keep non-double personal co
 for file in ~/double/.claude/commands/*.md; do
   ln -s "$file" ~/.claude/commands/$(basename "$file")
 done
+
+# Symlink skills (these are directories, not files)
+for dir in ~/double/.claude/skills/*/; do
+  ln -s "$dir" ~/.claude/skills/$(basename "$dir")
+done
 ```
 
 Benefits:
-- Auto-sync for double commands
-- Can add other commands to `~/.claude/commands/` that stay separate
-- Note: Need to re-run when adding new commands to double
+- Auto-sync for double commands and skills
+- Can add other commands/skills to `~/.claude/` that stay separate
+- Note: Need to re-run when adding new commands or skills to double
 
 See [Claude Code Slash Commands docs](https://code.claude.com/docs/en/slash-commands) for more details on how command discovery works.
+
+**Just want a single skill?** You don't need to clone Double. Grab it directly:
+
+```bash
+mkdir -p ~/.claude/skills/tangent
+curl -o ~/.claude/skills/tangent/SKILL.md https://raw.githubusercontent.com/ossa-ma/double/main/.claude/skills/tangent/SKILL.md
+```
 
 **3. Use the commands:**
 - `/handoff` - End of session, capture what matters
