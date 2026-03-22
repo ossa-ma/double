@@ -1,0 +1,30 @@
+Experiment: 20260320_194517
+Model: gemini-2.0-flash
+Runs per topic: 5
+Topics: 5
+
+blog post titles for a post about Rust adoption in the Python ecosystem [writing]
+  Tangent: N=3.2 C=3.2 A=2.8 D=1.00
+  Base:    N=3 C=5 A=4
+  Delta:   N=+0.2 C=-1.8 A=-1.2
+
+monetisation strategies for a developer tool that's currently free and open source [business]
+  Tangent: N=4.0 C=4.0 A=3.2 D=1.00
+  Base:    N=4 C=4 A=4
+  Delta:   N=+0.0 C=+0.0 A=-0.8
+
+why every SaaS dashboard looks the same [design]
+  Tangent: N=3.8 C=4.0 A=3.0 D=1.00
+  Base:    N=4 C=5 A=4
+  Delta:   N=-0.2 C=-1.0 A=-1.0
+
+how to make a technical blog stand out when everyone is writing about AI [writing]
+  Tangent: N=4.0 C=4.0 A=3.6 D=1.00
+  Base:    N=4 C=5 A=4
+  Delta:   N=+0.0 C=-1.0 A=-0.4
+
+new designs for suitcases that would help with getting around an airport [design]
+  Tangent: N=4.2 C=3.8 A=2.8 D=1.00
+  Base:    N=4 C=4 A=3
+  Delta:   N=+0.2 C=-0.2 A=-0.2
+
